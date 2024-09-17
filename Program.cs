@@ -9,8 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<AppDbContext>();//pra cada requisição ele vai gerar uma instancia pra mim desse appdbcontext como o proprio dotnet gero essa instancia pra mim então para mim recuperar e só eu chamar 
-builder.Services.AddHttpClient<FaturamentoService>();
- 
+
+//builder.Services.AddHttpClient<SumarioService>(Client =>
+//{
+//    Client.DefaultRequestHeaders.Add("email", "nathanjau2018@outlook.com");
+//});
+//builder.Services.AddTransient<SumarioService>();
+//builder.Services.AddHostedService<MeuServicoEmSegundoPlano>();
+//builder.Services.AddHostedService<TimedHostedService>();
+//builder.Services.AddTransient<ScopedProcessingService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
