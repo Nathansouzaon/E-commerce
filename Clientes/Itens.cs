@@ -15,13 +15,13 @@ namespace Ecommerce.Clientes
     
 
         // Construtor para inicializar a classe com valores
-        public Item(string descricao, decimal quantidade, decimal precoUnitario)
+        public Item(string descricao, decimal quantidade, decimal precoUnitario , decimal total)
         {
             ProdutoId = IdGenerator.GenerateId();
             Descricao = descricao;
             Quantidade = quantidade;
             PrecoUnitario = precoUnitario;
-            Total = 0;
+            Total = total;
         }
     }
 }

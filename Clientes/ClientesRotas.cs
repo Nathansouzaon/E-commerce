@@ -158,14 +158,14 @@ Detalhes dos itens do cliente (itens), incluindo quantidade e preço unitário.
         });
 
 
-        decimal soma = 0;
 
-        rotaAlterarPedido.MapPatch("/Item/{id}", async (int id,Item itens, AppDbContext context) =>
+        rotaAlterarPedido.MapPatch("/Item/{id}", async (int id,Item itens,AppDbContext context) =>
         {
             var ItemExiste = await context.Itens.FindAsync(id);
-
-            //pegando do meu construtor
-            
+      
+            decimal soma = 0;
+     
+     
             if (ItemExiste is null)
             {
                 return Results.NotFound();
@@ -173,7 +173,32 @@ Detalhes dos itens do cliente (itens), incluindo quantidade e preço unitário.
 
             ItemExiste.Descricao = itens.Descricao;
             ItemExiste.Quantidade = itens.Quantidade;
+            ItemExiste.PrecoUnitario = itens.PrecoUnitario;
+            ItemExiste.Total = itens.Total;
+
           
+                decimal desconto = 0.5m;
+                soma += ItemExiste.PrecoUnitario * ItemExiste.Quantidade;
+               if(soma > 500)
+                {
+                    desconto = soma * desconto;
+                    ItemExiste.Total += soma - desconto;
+                }else if(soma > 300)
+                {
+                    decimal descontoPremium = 0.10m;
+                    descontoPremium = soma * descontoPremium;
+                    ItemExiste.Total += soma - descontoPremium;
+                }else
+            {
+                    decimal somaVip = 0;
+                    decimal descontoVip = 0.15m;
+                    somaVip += ItemExiste.PrecoUnitario * ItemExiste.Quantidade;
+                    descontoVip = somaVip * descontoVip;
+                    ItemExiste.Total += somaVip - descontoVip;
+                }
+        
+            
+
             await context.SaveChangesAsync();
             return Results.Ok(ItemExiste);
         });

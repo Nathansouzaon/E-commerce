@@ -12,11 +12,11 @@ public class Cliente
     public Guid clienteId { get; init; }
 
     //private set = so consigo alterar esse cara dentro da minha classe, não consigo alterar pela instancia 
-    public string Nome { get; private set; }
+    public string Nome { get; set; }
 
-    public string Cpf { get; private set; }
+    public string Cpf { get; set; }
 
-    public string Categoria { get; private set; }
+    public string Categoria { get;  set; }
 
     public List<Item> Itens { get; set; } 
 
