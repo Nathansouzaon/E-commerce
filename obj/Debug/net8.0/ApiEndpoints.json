@@ -1,0 +1,69 @@
+[
+  {
+    "ContainingType": "Ecommerce.Clientes.ClientesRotas\u002B\u003C\u003Ec",
+    "Method": "\u003CAddRotasClientes\u003Eb__0_2",
+    "RelativePath": "Alterar-Pedido/Item/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "itens",
+        "Type": "Ecommerce.Clientes.Item",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Ecommerce.Clientes.ClientesRotas\u002B\u003C\u003Ec",
+    "Method": "\u003CAddRotasClientes\u003Eb__0_0",
+    "RelativePath": "Clientes/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Ecommerce.Clientes.AddClienteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Ecommerce.Clientes.ClientesRotas\u002B\u003C\u003Ec",
+    "Method": "\u003CAddRotasClientes\u003Eb__0_1",
+    "RelativePath": "listar-Pedido/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Ecommerce.Clientes.Item, Ecommerce, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
