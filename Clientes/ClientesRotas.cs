@@ -1,4 +1,4 @@
-using Ecommerce.data;
+ï»¿using Ecommerce.data;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -23,22 +23,22 @@ public static class ClientesRotas
         var rotaListar = app.MapGroup("/listar-Pedidos");
         var obterPedido = app.MapGroup("/Obter-Pedido");
         var rotaAlterarPedido = app.MapGroup("/Alterar-Pedido");
-        //criar cliente e inserindo no banco de dados, o entity quando for fazer uma requisição ele vai olhar esse addClienteRequest e o body quando eu mandar um json com o formato desse addCliente ele automaticamente vai pegar os dados do cliente e vai setar aqui dentro pra mim
+        //criar cliente e inserindo no banco de dados, o entity quando for fazer uma requisiï¿½ï¿½o ele vai olhar esse addClienteRequest e o body quando eu mandar um json com o formato desse addCliente ele automaticamente vai pegar os dados do cliente e vai setar aqui dentro pra mim
         rotasClientes.MapPost("", async (AddClienteRequest request, AppDbContext context, CancellationToken ct) =>
         {
-            decimal soma = Convert.ToDecimal("1,41293", new CultureInfo("pt-BR"));
-            decimal subTotal = Convert.ToDecimal("1,41293", new CultureInfo("pt-BR"));
-            decimal descontos = Convert.ToDecimal("1,41293", new CultureInfo("pt-BR"));
-            decimal valorTotal = Convert.ToDecimal("1,41293", new CultureInfo("pt-BR")); ;
+            decimal soma = 0;
+            decimal subTotal = 0;
+            decimal descontos = 0;
+            decimal valorTotal = 0;
+    
 
 
-
-            //acesso meu banco de dados se tiver algum cliente com o mesmo nome eu lanço um erro
+            //acesso meu banco de dados se tiver algum cliente com o mesmo nome eu lanï¿½o um erro
             var jaExiste = await context.Cliente.AnyAsync(Cliente => Cliente.Nome == request.Nome, ct);
 
 
             if (jaExiste)
-                return Results.Conflict("Nome De Usuário Já Existe.");
+                return Results.Conflict("Nome De Usuï¿½rio Jï¿½ Existe.");
 
             //pegando do meu construtor
             var novoCliente = new Cliente(request.Nome, request.Cpf, request.Categoria);
@@ -95,7 +95,7 @@ public static class ClientesRotas
             //o entity ele simula como se eu estivesse uma lista de clientes
             await context.Cliente.AddAsync(novoCliente, ct);
 
-            //o entity não salva nada ele não executa nenhuma operação no banco enquanto eu não chamo essa função quando damos um save o entity ele vai salvar somente o que mudou
+            //o entity nï¿½o salva nada ele nï¿½o executa nenhuma operaï¿½ï¿½o no banco enquanto eu nï¿½o chamo essa funï¿½ï¿½o quando damos um save o entity ele vai salvar somente o que mudou
             await context.SaveChangesAsync(ct);
 
 
@@ -107,15 +107,15 @@ public static class ClientesRotas
 
 
             /*
-             O objeto resumo consolidará as seguintes informações:
+             O objeto resumo consolidarï¿½ as seguintes informaï¿½ï¿½es:
 
 Identificador do Cliente (identificador)
 Subtotal antes dos descontos (subTotal)
 Valor total dos descontos (descontos)
-Valor total após descontos (valorTotal)
-Detalhes dos itens do cliente (itens), incluindo quantidade e preço unitário.
+Valor total apï¿½s descontos (valorTotal)
+Detalhes dos itens do cliente (itens), incluindo quantidade e preï¿½o unitï¿½rio.
              */
-            //criação de um obj anonimo
+            //criaï¿½ï¿½o de um obj anonimo
             var resumo = new
             {
                 identificador = novoCliente.Identificador.ToString(),

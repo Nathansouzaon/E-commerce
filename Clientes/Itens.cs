@@ -6,14 +6,12 @@ namespace Ecommerce.Clientes
     public class Item
     {
         [Key] // Define a propriedade como chave primária
-        [JsonIgnore]
+         
         public int ProdutoId { get; init; }
         public string Descricao { get; set; }
         public decimal Quantidade { get; set; }
         public decimal PrecoUnitario { get; set; }
 
-
- 
 
         [JsonIgnore]
         public decimal  Total  { get; set; }
@@ -28,7 +26,7 @@ namespace Ecommerce.Clientes
             Quantidade = quantidade;
             PrecoUnitario = precoUnitario;
             Total = total;
-            
+             
         }
     }
 }

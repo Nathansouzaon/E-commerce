@@ -10,9 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<AppDbContext>();//pra cada requisição ele vai gerar uma instancia pra mim desse appdbcontext como o proprio dotnet gero essa instancia pra mim então para mim recuperar e só eu chamar 
 builder.Services.AddHttpClient(); // Adiciona o IHttpClientFactory
-
-builder.Services.AddHttpClient();
-
+ 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
