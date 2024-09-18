@@ -132,7 +132,7 @@ Detalhes dos itens do cliente (itens), incluindo quantidade e preço unitário.
 
             Console.WriteLine(resumo);
             await sumarioService.EnviarSumarioAsync(resumo);
-            
+
 
 
 

@@ -128,3 +128,10 @@ C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\zh-Hans\Micros
 C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Natha\source\repos\E-commerce\Ecommerce\obj\Debug\net8.0\Ecommerce.sourcelink.json
+C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\GreenPipes.dll
+C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\MassTransit.dll
+C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\MassTransit.Extensions.DependencyInjectionIntegration.dll
+C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\MassTransit.Extensions.Hosting.dll
+C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\NewId.dll
+C:\Users\Natha\source\repos\E-commerce\Ecommerce\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

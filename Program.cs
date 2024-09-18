@@ -9,15 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<AppDbContext>();//pra cada requisição ele vai gerar uma instancia pra mim desse appdbcontext como o proprio dotnet gero essa instancia pra mim então para mim recuperar e só eu chamar 
+builder.Services.AddHttpClient(); // Adiciona o IHttpClientFactory
 
-//builder.Services.AddHttpClient<SumarioService>(Client =>
-//{
-//    Client.DefaultRequestHeaders.Add("email", "nathanjau2018@outlook.com");
-//});
-//builder.Services.AddTransient<SumarioService>();
-//builder.Services.AddHostedService<MeuServicoEmSegundoPlano>();
-//builder.Services.AddHostedService<TimedHostedService>();
-//builder.Services.AddTransient<ScopedProcessingService>();
+builder.Services.AddHttpClient();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,10 +24,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//gerando endpoint - lambda () => arrow funct
-//app.MapGet("Hello-World", () => "Hello World");
-//VendasEndPoint.AddEndPointVendas(app);
-//como usei o this na minha func agora posso chamar minha class assim
 app.AddRotasClientes();
 
 app.Run();
